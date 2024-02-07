@@ -1,0 +1,13 @@
+Na pasta de models estão presentes os códigos que manipulam o banco de dados
+Tudo que diz respeito à manipulação do Postgress está nos models.
+A biblioteca bcryptjs é utilizada para criptografar a senha do usuário. Uma vez que o usuário informa sua senha,
+uma nova senha criptografada é gerada a partir da informada e salva no banco de dados (somente será salva no bd a senha criptografada)
+this.addHook('beforeSave', async(user)=>{
+    if(user.password){
+                user.password_hash = await bcrypt.hash(user.password, 8);
+            }
+        });
+Antes das informações serem salvas no banco de dados é criado o campo password_hash recebendo a password criptografada
+Todos os models devem ser escritos como classes -> classe extends Model
+Toda classe Model deve possuir um método static init(sequelize){super.init(colunas do banco de dados, {sequelize}) } para criar a a linha do novo usuario do bd
+Para exportarmos o model devemos realizar export default Classe;

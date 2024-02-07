@@ -1,0 +1,6 @@
+Na pasta de controllers estão presentes os codigos que realizam a manipulação de toda a aplicação, isto é, toda
+aplicação de negócio do código está nos controllers.
+Cada controller pode possuir no máximo 5 métodos que não podem se repitir, ou seja, quando precisamos criar um método já
+existente, será necessário criar um outro controller.
+A biblioteca jsonwebtoken é utilizada na aplicação para criar um token de autenticação quando um usuário cadastrado entra no site
+A biblioteca yup é utilizada para realizar a validação de dados de entrada, tanto para o cadastro de um usuário, quanto para o login de um usuário
